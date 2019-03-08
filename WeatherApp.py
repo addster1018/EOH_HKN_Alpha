@@ -19,6 +19,14 @@ out_str = "The Current Temperature in Urbana, IL is: " + str(temp_F) + " °F"
 
 m=tk.Tk(className = "WEATHER")
 
+def key(event):
+    m.destroy()
+
+frame = tk.Frame(m, width=0, height=0)
+frame.focus_set()
+frame.bind("<Key>", key)
+frame.pack()
+
 # widgets
 Alexa_str = tk.Message(m, text="Alexa, What's the Temperature Outside?\n", width = 500, font=('Arial', 36))
 Alexa_str.pack()

@@ -9,6 +9,14 @@ out_str = "The current time is " + time_str + " on " + date_str
 
 m=tk.Tk(className = "TIME")
 
+def key(event):
+    m.destroy()
+
+frame = tk.Frame(m, width=0, height=0)
+frame.focus_set()
+frame.bind("<Key>", key)
+frame.pack()
+
 # widgets
 Alexa_str = tk.Message(m, text="Alexa, What Time Is It?\n", width = 500, font=('Arial', 36))
 Alexa_str.pack()
