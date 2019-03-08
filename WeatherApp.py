@@ -15,7 +15,7 @@ page_dict = ast.literal_eval(the_page.decode('UTF-8'))
 
 temp_F = (float(page_dict['main']['temp']) - 273.15) * 9/5 + 32
 
-out_str = "The Current Temperature in Urbana, IL is: " + str(temp_F) + " °F"
+out_str = "The Current Temperature in Urbana, IL is: " + str(round(temp_F)) + " °F"
 
 m=tk.Tk(className = "WEATHER")
 
