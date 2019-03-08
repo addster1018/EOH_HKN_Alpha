@@ -15,14 +15,16 @@ page_dict = ast.literal_eval(the_page.decode('UTF-8'))
 
 temp_F = (float(page_dict['main']['temp']) - 273.15) * 9/5 + 32
 
-out_str = "Temp: " + str(temp_F) + " degrees Fahrenheit"
+out_str = "The Current Temperature in Urbana, IL is: " + str(temp_F) + " °F"
 
 m=tk.Tk(className = "WEATHER")
 
 # widgets
-text = tk.Message(m, text = out_str)
+Alexa_str = tk.Message(m, text="Alexa, What's the Temperature Outside?\n\n", width = 500, font=('Arial', 36))
+Alexa_str.pack()
+text = tk.Message(m, text = out_str, width=400, font=("Courier New", 24))
 text.pack()
-button = tk.Button(m, text='Stop', width=100, command=m.destroy)
+button = tk.Button(m, text='Stop', width=150, command=m.destroy)
 button.pack()
 
 m.mainloop()
